@@ -1,0 +1,35 @@
+const API_BASE_URL = "http://192.168.1.21:5000/api/v1";
+const OTP_LENGTH = 6;
+const OTP_RESEND_TIMER = 60;
+const MAX_VEHICLE_IMAGES = 5;
+const MAX_IMAGE_SIZE_MB = 5;
+const SEARCH_RADIUS_DEFAULT = 10;
+const SEARCH_RADIUS_MAX = 50;
+const SEARCH_RESULTS_LIMIT = 20;
+const BOOKING_STATUS_ORDER = ["PENDING", "ACCEPTED", "ONGOING", "COMPLETED", "REJECTED", "CANCELLED"];
+const VEHICLE_TYPES = ["BIKE", "CAR", "VAN", "TRUCK", "SCOOTER", "OTHER"];
+const CACHE_TIMES = {
+  vehicleSearch: 2 * 60 * 1e3,
+  vehicleDetail: 5 * 60 * 1e3,
+  bookings: 1 * 60 * 1e3,
+  notifications: 30 * 1e3,
+  profile: 5 * 60 * 1e3,
+  dashboard: 2 * 60 * 1e3
+};
+const CURRENCY_SYMBOL = "\u20B9";
+const COUNTRY_CODE = "+91";
+export {
+  API_BASE_URL,
+  BOOKING_STATUS_ORDER,
+  CACHE_TIMES,
+  COUNTRY_CODE,
+  CURRENCY_SYMBOL,
+  MAX_IMAGE_SIZE_MB,
+  MAX_VEHICLE_IMAGES,
+  OTP_LENGTH,
+  OTP_RESEND_TIMER,
+  SEARCH_RADIUS_DEFAULT,
+  SEARCH_RADIUS_MAX,
+  SEARCH_RESULTS_LIMIT,
+  VEHICLE_TYPES
+};

@@ -1,10 +1,10 @@
 buildscript {
     ext {
-        buildToolsVersion = "34.0.0"
+        buildToolsVersion = "35.0.0"
         minSdkVersion = 23
-        compileSdkVersion = 34
-        targetSdkVersion = 34
-        ndkVersion = "25.1.8937393"
+        compileSdkVersion = 35
+        targetSdkVersion = 35
+        ndkVersion = "26.1.10909125"
         kotlinVersion = "1.9.22"
     }
     repositories {
@@ -12,20 +12,21 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle")
+        classpath("com.android.tools.build:gradle:8.6.0")
         classpath("com.facebook.react:react-native-gradle-plugin")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
-        // Uncomment below when you add google-services.json for Firebase
-        // classpath("com.google.gms:google-services:4.4.2")
-    }
-}
-
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-        maven { url("https://jitpack.io") }
     }
 }
 
 apply plugin: "com.facebook.react.rootproject"
+
+allprojects {
+    configurations.all {
+        resolutionStrategy {
+            force "com.google.android.gms:play-services-location:21.0.1"
+            force "com.google.android.gms:play-services-gcm:17.0.0"
+            force "com.google.android.gms:play-services-base:18.1.0"
+            force "com.google.android.gms:play-services-stats:17.0.3"
+        }
+    }
+}
